@@ -1,0 +1,14 @@
+WITH clean AS (
+    SELECT * FROM {{ ref('clean_sales') }}
+)
+
+SELECT
+    YEAR,
+    MONTH,
+    SUM(REVENUE)                    AS TOTAL_REVENUE,
+    COUNT(INVOICENO)                AS TOTAL_ORDERS,
+    COUNT(DISTINCT CUSTOMERID)      AS UNIQUE_CUSTOMERS,
+    SUM(QUANTITY)                   AS TOTAL_ITEMS_SOLD
+FROM clean
+GROUP BY YEAR, MONTH
+ORDER BY YEAR, MONTH

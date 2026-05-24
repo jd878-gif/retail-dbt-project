@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: raw
+    database: RETAIL_DB
+    schema: RAW
+    tables:
+      - name: RAW_SALES
+        description: "Raw retail sales transactions loaded from UCI dataset"
+        columns:
+          - name: INVOICENO
+            description: "Unique invoice number"
+          - name: STOCKCODE
+            description: "Product stock code"
+          - name: DESCRIPTION
+            description: "Product description"
+          - name: QUANTITY
+            description: "Quantity purchased"
+          - name: INVOICEDATE
+            description: "Date and time of invoice"
+          - name: UNITPRICE
+            description: "Price per unit"
+          - name: CUSTOMERID
+            description: "Unique customer identifier"
+          - name: COUNTRY
+            description: "Country of purchase"

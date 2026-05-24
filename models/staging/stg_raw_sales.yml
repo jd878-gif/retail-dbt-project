@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_raw_sales
+    description: "Staged retail sales data filtered from RAW.RAW_SALES. 
+                  Removes nulls, cancellations, and invalid records."
+    columns:
+      - name: INVOICENO
+        description: "Unique invoice number for each transaction"
+        tests:
+          - not_null
+
+      - name: STOCKCODE
+        description: "Unique product stock code"
+        tests:
+          - not_null
+
+      - name: DESCRIPTION
+        description: "Product description"
+        tests:
+          - not_null
+
+      - name: QUANTITY
+        description: "Number of items purchased — negatives removed"
+        tests:
+          - not_null
+
+      - name: INVOICEDATE
+        description: "Date and time of invoice as string"
+        tests:
+          - not_null
+
+      - name: UNITPRICE
+        description: "Price per unit in GBP — zeros removed"
+        tests:
+          - not_null
+
+      - name: CUSTOMERID
+        description: "Unique customer identifier — nulls removed"
+        tests:
+          - not_null
+
+      - name: COUNTRY
+        description: "Country where purchase was made"
+        tests:
+          - not_null
+
+      - name: REVENUE
+        description: "Calculated as QUANTITY * UNITPRICE"
+        tests:
+          - not_null
+
+      - name: LOADED_AT
+        description: "Timestamp when record was loaded by dbt"
+        tests:
+          - not_null

@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: clean_sales
+    description: "Fully cleaned and transformed retail sales data.
+                  Includes proper timestamps, extracted date parts,
+                  and standardized text fields."
+    columns:
+      - name: INVOICENO
+        description: "Unique invoice number"
+        tests:
+          - not_null
+
+      - name: STOCKCODE
+        description: "Product stock code"
+        tests:
+          - not_null
+
+      - name: DESCRIPTION
+        description: "Uppercased and trimmed product description"
+        tests:
+          - not_null
+
+      - name: QUANTITY
+        description: "Number of items purchased"
+        tests:
+          - not_null
+
+      - name: INVOICEDATE_TS
+        description: "Proper timestamp converted from string"
+        tests:
+          - not_null
+
+      - name: INVOICE_DATE_ONLY
+        description: "Date only extracted from INVOICEDATE_TS"
+        tests:
+          - not_null
+
+      - name: YEAR
+        description: "Year extracted from invoice date"
+        tests:
+          - not_null
+
+      - name: MONTH
+        description: "Month extracted from invoice date"
+        tests:
+          - not_null
+
+      - name: UNITPRICE
+        description: "Price per unit in GBP"
+        tests:
+          - not_null
+
+      - name: CUSTOMERID
+        description: "Unique customer identifier"
+        tests:
+          - not_null
+
+      - name: COUNTRY
+        description: "Uppercased and trimmed country name"
+        tests:
+          - not_null
+
+      - name: REVENUE
+        description: "Total revenue — QUANTITY * UNITPRICE"
+        tests:
+          - not_null
