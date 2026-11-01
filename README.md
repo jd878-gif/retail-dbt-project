@@ -2,7 +2,7 @@
 
 dbt transformation layer for the Retail Analytics Pipeline.
 Transforms raw Snowflake data into clean, tested, and documented
-analytics-ready tables.
+analytics-ready tables.Companion to the [Retail Analytics Pipeline](https://github.com/jd878-gif/retail-analytics-pipeline), which built the original version in Snowpark Python.
 
 
 
@@ -55,10 +55,13 @@ clean_sales (table — 397,880 rows)
 
 ## Data Quality
 
-- **52 tests passing** across all models
+- **57 tests passing** across all models
 - not_null tests on every column
 - unique tests on key columns
 - accepted_values tests on RFM scores and segments
+- Reconciliation tests: monthly and country revenue must add up to the cleaned fact table
+- Relationship test: every segmented customer exists in clean_sales
+- Range test: no zero or negative quantities, prices, or revenue
 
 ---
 
@@ -140,7 +143,11 @@ retail_dbt_project/
 │       └── analytics.yml
 │
 ├── dbt_project.yml
-├── packages.yml
+├── tests/
+│   ├── assert_monthly_revenue_reconciles.sql
+│   ├── assert_country_revenue_reconciles.sql
+│   ├── assert_every_customer_segmented.sql
+│   └── assert_positive_quantity_and_price.sql
 └── README.md
 
 ---
