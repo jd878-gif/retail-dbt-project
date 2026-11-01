@@ -123,7 +123,7 @@ dbt docs serve
 ---
 
 ## Project Structure
-`└──
+```
 retail_dbt_project/
 │
 ├── models/
@@ -150,7 +150,7 @@ retail_dbt_project/
 │   ├── assert_every_customer_segmented.sql
 │   └── assert_positive_quantity_and_price.sql
 └── README.md
-`└──
+```
 ---
 
 ## Author
