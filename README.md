@@ -4,6 +4,8 @@ dbt transformation layer for the Retail Analytics Pipeline.
 Transforms raw Snowflake data into clean, tested, and documented
 analytics-ready tables.
 
+
+
 ![dbt](https://img.shields.io/badge/dbt-1.11-FF694B)
 ![Snowflake](https://img.shields.io/badge/Snowflake-Data_Warehouse-29B5E8)
 ![Tests](https://img.shields.io/badge/Tests-52_Passing-2ecc71)
@@ -145,5 +147,5 @@ retail_dbt_project/
 
 **Jeet Dave**
 - LinkedIn: [linkedin.com/in/jeetdave11](https://linkedin.com/in/jeetdave11)
-- Portfolio: [jd878-gif.github.io/portfolio](https://jd878-gif.github.io/portfolio)
+- Portfolio: https://portfolio-eight-ebon-obwtjca8m8.vercel.app/
 - Email: jeetd6220@gmail.com
