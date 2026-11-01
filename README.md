@@ -26,6 +26,8 @@ analytics-ready tables.
 ---
 
 ## Data Flow
+
+```
 RAW.RAW_SALES (541,909 rows)
 ↓
 stg_raw_sales (view)
@@ -38,7 +40,7 @@ clean_sales (table — 397,880 rows)
 │ country_revenue  (37 countries) │
 │ customer_segments (4,338 users) │
 └─────────────────────────────────┘
-
+```
 ---
 
 ## Tech Stack
